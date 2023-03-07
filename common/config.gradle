@@ -1,7 +1,7 @@
 ext {
     android = [
             compileSdk   : 32,
-            applicationId: "com.jixingmao.pay_pos_android",
+            applicationId: "com.csengineer.common",
             minSdk       : 21,
             targetSdk    : 32,
             versionCode  : 1,

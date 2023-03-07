@@ -3,14 +3,14 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    compileSdk rootProject.ext.android["compileSdk"]
 
     defaultConfig {
-        applicationId "com.csengineer.common"
-        minSdk 21
-        targetSdk 32
-        versionCode 1
-        versionName "1.0"
+        applicationId rootProject.ext.android["applicationId"]
+        minSdk rootProject.ext.android["minSdk"]
+        targetSdk rootProject.ext.android["targetSdk"]
+        versionCode rootProject.ext.android["versionCode"]
+        versionName rootProject.ext.android["versionName"]
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
