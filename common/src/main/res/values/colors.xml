@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="keyboard_text_color">#1A1A1A</color>
+    <color name="service_rate_color">#808080</color>
+    <color name="app_theme_color">#70C5FF</color>
+    <color name="app_theme_color_light">#573743A0</color>
+    <color name="sure_text_color">#E46060</color>
+    <color name="white">#fff</color>
+    <color name="black">#000</color>
+    <color name="cancel_text_color">#47BA96</color>
+    <color name="transparent">#00000000</color>
+    <color name="color_black_10">#1A000000</color>
+
+
+</resources>

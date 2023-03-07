@@ -1,0 +1,41 @@
+ext {
+    android = [
+            compileSdk   : 32,
+            applicationId: "com.jixingmao.pay_pos_android",
+            minSdk       : 21,
+            targetSdk    : 32,
+            versionCode  : 1,
+            versionName  : "1.0",
+    ]
+
+    dependencies = [
+            appcompat            : "androidx.appcompat:appcompat:1.3.0",
+            material             : "com.google.android.material:material:1.4.0",
+            androidautosize      : "com.github.JessYanCoding:AndroidAutoSize:v1.2.1",
+            immersionbar         : "com.geyifeng.immersionbar:immersionbar:3.2.2",
+            butterknife          : "com.jakewharton:butterknife:10.2.3",
+            butterknifecompiler  : "com.jakewharton:butterknife-compiler:10.2.3",
+            brvah                : "com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.10",
+            mpandroidchart       : 'com.github.PhilJay:MPAndroidChart:v3.1.0',
+            rxjava               : 'io.reactivex.rxjava3:rxjava:3.1.5',
+            retrofit             : 'com.squareup.retrofit2:retrofit:2.9.0',
+            convertergson        : 'com.squareup.retrofit2:converter-gson:2.9.0',
+            converterscalars     : 'com.squareup.retrofit2:converter-scalars:2.9.0',
+            adapterrxjava        : 'com.squareup.retrofit2:adapter-rxjava:2.9.0',
+            rxjava3adapter       : 'com.squareup.retrofit2:adapter-rxjava3:2.9.0',
+            rxandroid            : 'io.reactivex.rxjava2:rxandroid:2.1.1',
+            logginginterceptor   : 'com.squareup.okhttp3:logging-interceptor:4.10.0',
+            rxlifecycle          : 'com.trello.rxlifecycle4:rxlifecycle:4.0.2',
+            rxlifecyclecomponents: 'com.trello.rxlifecycle4:rxlifecycle-components:4.0.2',
+            rxbinding            : 'com.jakewharton.rxbinding2:rxbinding:2.2.0',
+            greendao             : 'org.greenrobot:greendao:3.3.0',
+            glide                : 'com.github.bumptech.glide:glide:4.14.2',
+            glideprocessor       : 'com.github.bumptech.glide:compiler:4.14.2',
+            wheelpicker          : 'com.github.gzu-liyujiang.AndroidPicker:WheelPicker:4.1.11',
+            pictureselector      : 'io.github.lucksiege:pictureselector:v3.10.7',
+            eventbus             : 'org.greenrobot:eventbus:3.3.1',
+            swiperefreshlayout   : 'androidx.swiperefreshlayout:swiperefreshlayout:1.0.0',
+            zxing                : 'com.google.zxing:core:3.5.1',
+            lottie               : 'com.airbnb.android:lottie:5.2.0',
+    ]
+}

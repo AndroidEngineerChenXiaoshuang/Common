@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="num_1">1</string>
+    <string name="num_2">2</string>
+    <string name="num_3">3</string>
+    <string name="num_4">4</string>
+    <string name="num_5">5</string>
+    <string name="num_6">6</string>
+    <string name="num_7">7</string>
+    <string name="num_8">8</string>
+    <string name="num_9">9</string>
+    <string name="num_0">0</string>
+    <string name="num_point">·</string>
+    <string name="submit">提交</string>
+    <string name="email_auth_code">邮箱验证码</string>
+    <string name="with_drwal_amount_text">提现金额</string>
+    <string name="test_withdrwal_amount_text">$ 500,00</string>
+    <string name="service_rate_text">服务费</string>
+    <string name="test_service_rate_text">$ 0.01</string>
+    <string name="email_text">邮箱</string>
+    <string name="test_email_text">2********6@gmail.com</string>
+    <string name="test_month_text">Septiembre</string>
+    <string name="test_month_text2">Octubre</string>
+    <string name="test_month_text3">Noviembre</string>
+    <string name="test_month_text4">Diciembre</string>
+    <string name="revoke_text">撤回</string>
+    <string name="confirm_text">确定</string>
+    <string name="cancel_text">取消</string>
+    <string name="connect_error">连接错误</string>
+    <string name="connect_timeout">请求超时</string>
+    <string name="bad_network">HTTP错误</string>
+    <string name="parse_error">解析错误</string>
+    <string name="unknown_error">未知错误</string>
+    <string name="loading">加载中</string>
+    <string name="page_404_text">页面加载失败，请点击重试刷新</string>
+    <string name="page_no_network_text">网络连接已断开，请检查网络设置</string>
+    <string name="retry">重试</string>
+
+</resources>

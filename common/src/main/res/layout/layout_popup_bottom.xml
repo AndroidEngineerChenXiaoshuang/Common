@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#331A1A1A">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="106dp"
+        android:layout_marginEnd="40dp"
+        app:cardBackgroundColor="#fff"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="10dp">
+
+        <LinearLayout
+            android:id="@+id/linear_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="12dp">
+
+                <!-- 取消按钮 -->
+                <ImageView
+                    android:id="@+id/img_cancel"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="8dp"
+                    android:src="@mipmap/close_icon" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/email_auth_code"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="12dp"
+                android:text="@string/with_drwal_amount_text"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/textAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:textColor="#000000"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                tools:text="@string/test_withdrwal_amount_text" />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="12dp"
+                android:background="#F2F2F2" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="12dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="12dp">
+
+                <TextView
+                    android:id="@+id/service_rate_tip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/service_rate_text"
+                    android:textColor="@color/service_rate_color"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/service_rate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:textColor="#191919"
+                    android:textSize="12sp"
+                    tools:text="@string/test_service_rate_text" />
+
+
+                <TextView
+                    android:id="@+id/email_tips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/service_rate_tip"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/email_text"
+                    android:textColor="@color/service_rate_color"
+                    android:textSize="12sp" />
+
+
+                <TextView
+                    android:id="@+id/email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/email_tips"
+                    android:layout_alignParentEnd="true"
+                    android:textColor="#191919"
+                    android:textSize="12sp"
+                    tools:text="@string/test_email_text" />
+
+
+            </RelativeLayout>
+
+            <!-- 6位密码框布局，需要一个圆角边框的shape作为layout的背景 -->
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal">
+
+                <!-- inputType设置隐藏密码明文
+                     textSize设置大一点，否则“点”太小了，不美观 -->
+                <FrameLayout
+                    android:id="@+id/pwd1"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/psw_area_bg">
+
+                    <TextView
+                        android:id="@+id/tv_pass1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:inputType="numberPassword"
+                        android:text=""
+                        android:textColor="#000000"
+                        android:textSize="36sp" />
+
+
+                    <ImageView
+                        android:id="@+id/img_pass1"
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/img_psw_bg"
+                        android:visibility="invisible" />
+
+                </FrameLayout>
+
+
+                <FrameLayout
+                    android:id="@+id/pwd2"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/psw_area_bg">
+
+                    <TextView
+                        android:id="@+id/tv_pass2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:inputType="numberPassword"
+                        android:text=""
+                        android:textColor="#000000"
+                        android:textSize="36sp" />
+
+
+                    <ImageView
+                        android:id="@+id/img_pass2"
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/img_psw_bg"
+                        android:visibility="invisible" />
+
+                </FrameLayout>
+
+
+                <FrameLayout
+                    android:id="@+id/pwd3"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/psw_area_bg">
+
+                    <TextView
+                        android:id="@+id/tv_pass3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:inputType="numberPassword"
+                        android:text=""
+                        android:textColor="#000000"
+                        android:textSize="36sp" />
+
+
+                    <ImageView
+                        android:id="@+id/img_pass3"
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/img_psw_bg"
+                        android:visibility="invisible" />
+
+                </FrameLayout>
+
+
+                <FrameLayout
+                    android:id="@+id/pwd4"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/psw_area_bg">
+
+                    <TextView
+                        android:id="@+id/tv_pass4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:inputType="numberPassword"
+                        android:text=""
+                        android:textColor="#000000"
+                        android:textSize="36sp" />
+
+
+                    <ImageView
+                        android:id="@+id/img_pass4"
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/img_psw_bg"
+                        android:visibility="invisible" />
+
+                </FrameLayout>
+
+
+                <FrameLayout
+                    android:id="@+id/pwd5"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/psw_area_bg">
+
+                    <TextView
+                        android:id="@+id/tv_pass5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:inputType="numberPassword"
+                        android:text=""
+                        android:textColor="#000000"
+                        android:textSize="36sp" />
+
+
+                    <ImageView
+                        android:id="@+id/img_pass5"
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/img_psw_bg"
+                        android:visibility="invisible" />
+
+                </FrameLayout>
+
+
+                <FrameLayout
+                    android:id="@+id/pwd6"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/psw_area_bg">
+
+                    <TextView
+                        android:id="@+id/tv_pass6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:inputType="numberPassword"
+                        android:text=""
+                        android:textColor="#000000"
+                        android:textSize="36sp" />
+
+
+                    <ImageView
+                        android:id="@+id/img_pass6"
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/img_psw_bg"
+                        android:visibility="invisible" />
+
+                </FrameLayout>
+
+
+                <androidx.constraintlayout.helper.widget.Flow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:constraint_referenced_ids="pwd1,pwd2,pwd3,pwd4,pwd5,pwd6"
+                    app:flow_horizontalGap="8dp"
+                    app:flow_maxElementsWrap="6"
+                    app:flow_wrapMode="chain"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <com.jixingmao.common.view.safekeyboard.VirtualKeyboardView
+        android:id="@+id/virtualKeyboardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="0dp" />
+
+
+</RelativeLayout>
