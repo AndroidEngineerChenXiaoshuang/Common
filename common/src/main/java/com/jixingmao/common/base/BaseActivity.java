@@ -32,7 +32,7 @@ abstract public class BaseActivity<T extends BasePresenter> extends RxAppCompatA
 
     @Override
     protected void attachBaseContext(Context newBase) {
-        String language = SharedPreferencesUtils.getString(this,
+        String language = SharedPreferencesUtils.getString(newBase,
                 LanguageUtil.SP_KEY_LANGUAGE, LanguageUtil.SIMPLIFIED_CHINESE);
         //切换多语言，然后将新生成的 context 覆盖给 attachBaseContext()
         Context context = LanguageUtil.attachBaseContext(newBase, language);
