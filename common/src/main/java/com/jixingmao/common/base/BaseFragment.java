@@ -1,5 +1,6 @@
 package com.jixingmao.common.base;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,11 +34,11 @@ abstract public class BaseFragment<T extends BasePresenterFragment> extends RxFr
 
     private T mPresenter;
 
-    private View defaultView;
-    private ImageView defaultIcon;
-    private TextView defaultTitle;
-    private TextView defaultBtn;
-    private View content;
+    protected View defaultView;
+    protected ImageView defaultIcon;
+    protected TextView defaultTitle;
+    protected TextView defaultBtn;
+    protected View content;
 
     @Nullable
     @Override
@@ -51,8 +52,24 @@ abstract public class BaseFragment<T extends BasePresenterFragment> extends RxFr
         defaultTitle = topContent.findViewById(R.id.default_title);
         defaultBtn = topContent.findViewById(R.id.default_btn);
         defaultBtn.setOnClickListener(this);
+        initView();
         return topContent;
     }
+
+    @SuppressLint("WrongConstant")
+    private void initView() {
+        if (BaseTitleActivity.ConfigStyle.getInstance().isDefaultTextColorInit()) {
+            defaultTitle.setTextColor(BaseTitleActivity.ConfigStyle.getInstance().getDefaultTextColor());
+        }
+        if (BaseTitleActivity.ConfigStyle.getInstance().isDefaultRetryBtnBgInit()) {
+            defaultBtn.setBackgroundResource(BaseTitleActivity.ConfigStyle.getInstance().getDefaultRetryBtnBg());
+        }
+        if (BaseTitleActivity.ConfigStyle.getInstance().isDefaultRetryBtnTextColorInit()) {
+            defaultBtn.setTextColor(BaseTitleActivity.ConfigStyle.getInstance().getDefaultRetryBtnTextColor());
+        }
+    }
+
+
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -118,8 +135,10 @@ abstract public class BaseFragment<T extends BasePresenterFragment> extends RxFr
         defaultView.setVisibility(View.VISIBLE);
         defaultBtn.setVisibility(View.VISIBLE);
         content.setVisibility(View.GONE);
-        defaultIcon.setImageResource(R.mipmap.page_404);
         defaultTitle.setText(getString(R.string.page_404_text));
+        if (BaseTitleActivity.ConfigStyle.getInstance().isNetWorkErrorImgSrcInit()) {
+            defaultIcon.setImageResource(BaseTitleActivity.ConfigStyle.getInstance().getNetWorkErrorImgSrc());
+        }
     }
 
     @Override
@@ -127,8 +146,10 @@ abstract public class BaseFragment<T extends BasePresenterFragment> extends RxFr
         defaultView.setVisibility(View.VISIBLE);
         defaultBtn.setVisibility(View.VISIBLE);
         content.setVisibility(View.GONE);
-        defaultIcon.setImageResource(R.mipmap.page_no_network);
         defaultTitle.setText(getString(R.string.page_no_network_text));
+        if (BaseTitleActivity.ConfigStyle.getInstance().isNoNetWorkImgSrcInit()) {
+            defaultIcon.setImageResource(BaseTitleActivity.ConfigStyle.getInstance().getNoNetWorkImgSrc());
+        }
     }
 
     public void bindEmptyViewToAdapter(BaseQuickAdapter adapter, int resIcon, int resText) {
