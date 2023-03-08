@@ -72,5 +72,6 @@ dependencies {
     api rootProject.ext.dependencies["eventbus"]
     api rootProject.ext.dependencies["swiperefreshlayout"]
     api rootProject.ext.dependencies["zxing"]
+    api rootProject.ext.dependencies["zxingandroidembedded"]
     api rootProject.ext.dependencies["lottie"]
 }
