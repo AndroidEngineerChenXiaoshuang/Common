@@ -73,6 +73,11 @@ public abstract class BaseTitleActivity<T extends BasePresenter> extends BaseAct
 
     @SuppressLint("WrongConstant")
     private void initView() {
+        if (ConfigStyle.getInstance().isShowLightBg()) {
+            lightBg.setVisibility(View.VISIBLE);
+        } else {
+            lightBg.setVisibility(View.GONE);
+        }
         if (ConfigStyle.getInstance().isLightBgImgColorInit()) {
             lightBg.setBackgroundColor(ConfigStyle.getInstance().getLightBgImgColor());
         }
@@ -236,6 +241,8 @@ public abstract class BaseTitleActivity<T extends BasePresenter> extends BaseAct
     public static class ConfigStyle {
         private static ConfigStyle singleton;
 
+        private boolean isShowLightBg;
+
         private int mLightBgImgSrc;
         private boolean mLightBgImgSrcInit;
 
@@ -293,6 +300,13 @@ public abstract class BaseTitleActivity<T extends BasePresenter> extends BaseAct
             return singleton;
         }
 
+        public boolean isShowLightBg() {
+            return isShowLightBg;
+        }
+
+        public void setShowLightBg(boolean showLightBg) {
+            isShowLightBg = showLightBg;
+        }
 
         public int getTopBarLightBgColor() {
             return mTopBarLightBgColor;
