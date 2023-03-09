@@ -21,12 +21,12 @@ public class HttpHeaderInterceptor implements Interceptor {
     public Response intercept(@NonNull Chain chain) throws IOException {
         String accessToken = SharedPreferencesUtils.getString(ContextUtils.getContext()
                 , SharedPreferencesUtils.key_access_token, null);
+        Request.Builder builder = chain.request().newBuilder();
+
         if (!TextUtils.isEmpty(accessToken)) {
-            Request request = chain.request().newBuilder()
-                    .addHeader("Authorization", "Bearer " + accessToken)
-                    .build();
-            return chain.proceed(request);
+            builder.addHeader("Authorization", "Bearer " + accessToken);
         }
-        return chain.proceed(chain.request());
+
+        return chain.proceed(builder.build());
     }
 }
