@@ -33,11 +33,11 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             buildConfigField("boolean", "LOG_DEBUG", "false")
-            buildConfigField("String", "LOG_TAG", "\"pay_pos_android\"")
+            buildConfigField("String", "LOG_TAG", "\"common\"")
         }
         debug {
             buildConfigField("boolean", "LOG_DEBUG", "true")
-            buildConfigField("String", "LOG_TAG", "\"pay_pos_android\"")
+            buildConfigField("String", "LOG_TAG", "\"common\"")
         }
     }
     compileOptions {
@@ -74,4 +74,5 @@ dependencies {
     api rootProject.ext.dependencies["zxing"]
     api rootProject.ext.dependencies["zxingandroidembedded"]
     api rootProject.ext.dependencies["lottie"]
+    api rootProject.ext.dependencies["pictureselector_compress"]
 }
