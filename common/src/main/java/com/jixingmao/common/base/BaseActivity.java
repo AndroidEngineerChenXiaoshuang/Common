@@ -55,7 +55,7 @@ abstract public class BaseActivity<T extends BasePresenter> extends RxAppCompatA
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ImmersionBar.with(this)
-                .transparentNavigationBar()
+                .fullScreen(false)
                 .statusBarDarkFont(true)
                 .init();
         EventBus.getDefault().register(this);

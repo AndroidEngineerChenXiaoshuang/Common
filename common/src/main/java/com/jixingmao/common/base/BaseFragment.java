@@ -40,16 +40,10 @@ abstract public class BaseFragment<T extends BasePresenterFragment> extends RxFr
     protected TextView defaultBtn;
     protected View content;
 
-    public boolean isInitImmersionBar() {
-        return true;
-    }
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        if (isInitImmersionBar()) {
-            ImmersionBar.with(this).init();
-        }
+        ImmersionBar.with(this).init();
         ViewGroup topContent = (ViewGroup) inflater.inflate(R.layout.fragment_base, container, false);
         content = inflater.inflate(getLayoutResId(), container, false);
         topContent.addView(content);
