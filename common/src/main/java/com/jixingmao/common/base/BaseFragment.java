@@ -74,7 +74,8 @@ abstract public class BaseFragment<T extends BasePresenterFragment> extends RxFr
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.bind(this, view);
         ImmersionBar.with(this)
-                .transparentNavigationBar()
+                .fullScreen(false)
+                .navigationBarColor("#000000")
                 .statusBarDarkFont(true)
                 .init();
         EventBus.getDefault().register(this);
