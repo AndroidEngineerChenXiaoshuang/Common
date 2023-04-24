@@ -39,5 +39,6 @@ ext {
             zxing                   : 'com.google.zxing:core:3.5.1',
             zxingandroidembedded    : 'com.journeyapps:zxing-android-embedded:4.3.0',
             lottie                  : 'com.airbnb.android:lottie:5.2.0',
+            websocket               : 'org.java-websocket:Java-WebSocket:1.5.3',
     ]
 }

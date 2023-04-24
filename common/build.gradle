@@ -75,4 +75,5 @@ dependencies {
     api rootProject.ext.dependencies["zxingandroidembedded"]
     api rootProject.ext.dependencies["lottie"]
     api rootProject.ext.dependencies["pictureselector_compress"]
+    api rootProject.ext.dependencies["websocket"]
 }
