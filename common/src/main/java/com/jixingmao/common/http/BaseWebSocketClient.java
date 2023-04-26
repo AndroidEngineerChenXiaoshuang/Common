@@ -17,7 +17,6 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class BaseWebSocketClient extends WebSocketClient {
 
-    public static final String HEARTBEAT_CMD = "HEARTBEAT_CMD";
 
     public BaseWebSocketClient(URI serverUri) {
         super(serverUri);
@@ -26,8 +25,6 @@ public class BaseWebSocketClient extends WebSocketClient {
     @Override
     public void onOpen(ServerHandshake handShakeData) {
         LogUtils.i("server status：" + handShakeData.getHttpStatusMessage());
-        //开启心跳保活
-        heartbeat();
     }
 
     @Override
@@ -56,17 +53,4 @@ public class BaseWebSocketClient extends WebSocketClient {
         LogUtils.e("onError info：" + ex);
     }
 
-
-    /**
-     * 心跳保活
-     */
-    private void heartbeat() {
-        Flowable.interval(3000, TimeUnit.MILLISECONDS)
-                .subscribe(new Consumer<Long>() {
-                    @Override
-                    public void accept(Long aLong) throws Throwable {
-                        send(HEARTBEAT_CMD);
-                    }
-                });
-    }
 }
