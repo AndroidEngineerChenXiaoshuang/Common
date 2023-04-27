@@ -17,6 +17,7 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class BaseWebSocketClient extends WebSocketClient {
 
+    protected boolean isReConnect;
 
     public BaseWebSocketClient(URI serverUri) {
         super(serverUri);
@@ -36,15 +37,17 @@ public class BaseWebSocketClient extends WebSocketClient {
     public void onClose(int code, String reason, boolean remote) {
         LogUtils.i("onClose time: " + new Date());
         LogUtils.i("onClose info：" + code + " " + reason + " " + remote);
-        Observable.timer(1000, TimeUnit.MILLISECONDS)
-                .observeOn(Schedulers.io())
-                .subscribe(new Consumer<Long>() {
-                    @Override
-                    public void accept(Long aLong) throws Throwable {
-                        LogUtils.i("reconnect ....");
-                        reconnect();
-                    }
-                });
+        if (isReConnect) {
+            Observable.timer(1000, TimeUnit.MILLISECONDS)
+                    .observeOn(Schedulers.io())
+                    .subscribe(new Consumer<Long>() {
+                        @Override
+                        public void accept(Long aLong) throws Throwable {
+                            LogUtils.i("reconnect ....");
+                            reconnect();
+                        }
+                    });
+        }
     }
 
     @Override
